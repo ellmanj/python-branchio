@@ -94,6 +94,9 @@ class Client(object):
         self._check_param("channel", channel, params, type=(str, unicode), max_length=128)
         self._check_param("stage", stage, params, type=(str, unicode), max_length=128)
 
+        # add sdk: api so we get a universal link
+        params['sdk'] = 'api'
+
         if skip_api_call is True:
             return params
         else:
